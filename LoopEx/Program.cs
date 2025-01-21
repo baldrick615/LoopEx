@@ -33,7 +33,7 @@
                     //output the values to a csv file
                     using (var sw = new StreamWriter(path + fileName, true))
                     {
-                        sw.WriteLine(array1[i][0] + ", " + array1[i][1] + ", " + array1[i][2] + ", " + array2[j]);
+                        sw.WriteLine(array1[i][0] + ", " + array1[i][1] + ", " + array1[i][2] + ", " + array1[i][4] + ", " + array1[i][5] + ", " + array2[j]);
                     }
                 }
             }
@@ -42,14 +42,17 @@
                 //output the values to a csv file
                 using (var sw = new StreamWriter(path + fileName, true))
                 {
-                    sw.WriteLine(array1[i][0] + ", " + array1[i][1] + ", " + array1[i][2] + "");
+                    sw.WriteLine(array1[i][0] + ", " + array1[i][1] + ", " + array1[i][2] + ", " + array1[i][4] + ", " + array1[i][5] + ", " + "''");
                 }
             }
         }
     }
 
-    static string[][] ReadCsvFile(string filePath) { 
-        var lines = File.ReadAllLines(filePath); 
-        return lines.Select(line => line.Split(',')).ToArray(); 
+
+
+    static string[][] ReadCsvFile(string filePath)
+    {
+        var lines = File.ReadAllLines(filePath);
+        return lines.Select(line => line.Split(',')).ToArray();
     }
 }
